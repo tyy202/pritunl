@@ -11,7 +11,7 @@
 services:
   # MongoDB database for Pritunl
   mongodb:
-    image: mongo:8.0
+    image: 192.168.18.100:5000/mongo:8.0
     container_name: pritunl-mongodb
     restart: unless-stopped
     environment:
@@ -29,7 +29,7 @@ services:
 
   # Redis cache (optional but improves performance)
   redis:
-    image: redis:8-alpine
+    image: 192.168.18.100:5000/redis:8-alpine
     container_name: pritunl-redis
     restart: unless-stopped
     command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru

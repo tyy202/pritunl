@@ -9,7 +9,7 @@
 # ============================================================================
 # Stage 1: Build pritunl-web (Go binary)
 # ============================================================================
-FROM golang:1.24-bookworm AS web-builder
+FROM 192.168.18.100:5000/golang:1.24-bookworm AS web-builder
 
 WORKDIR /build
 
@@ -28,7 +28,7 @@ RUN go install -v github.com/pritunl/pritunl-web@latest
 # ============================================================================
 # Stage 2: Final runtime image
 # ============================================================================
-FROM python:3.12-slim-bookworm
+FROM 192.168.18.100:5000/python:3.12-slim-bookworm
 
 WORKDIR /app
 
