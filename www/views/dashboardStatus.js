@@ -48,7 +48,7 @@ define([
 
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load server status, server error occurred.',
+            message: i18n.t('msg.failedLoadStatus'),
             dismissable: true
           });
           $('.alerts-container').append(alertView.render().el);

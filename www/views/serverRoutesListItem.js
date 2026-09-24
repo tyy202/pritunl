@@ -94,7 +94,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully modified route.',
+          message: i18n.t('msg.successModifyRoute'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -116,7 +116,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully removed route.',
+          message: i18n.t('msg.successRemoveRoute'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

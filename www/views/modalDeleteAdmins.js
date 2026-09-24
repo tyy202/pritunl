@@ -10,7 +10,7 @@ define([
   var ModalDeleteAdminsView = ModalView.extend({
     className: 'delete-admins-modal',
     template: _.template(modalDeleteAdminsTemplate),
-    title: 'Delete Administrators',
+    title: i18n.t('modal.modalDeleteAdmins.title'),
     okText: 'Delete',
     body: function() {
       var i;

@@ -1,20 +1,109 @@
-# pritunl: enterprise vpn server
+# pritunl - 企业级 VPN 服务器
 
 [![github](https://img.shields.io/badge/github-pritunl-181717.svg?style=flat)](https://github.com/pritunl)
 [![twitter](https://img.shields.io/badge/twitter-pritunl-55acee.svg?style=flat)](https://twitter.com/pritunl)
 [![substack](https://img.shields.io/badge/substack-pritunl-ff6719.svg?style=flat)](https://pritunl.substack.com/)
 [![forum](https://img.shields.io/badge/discussion-forum-ffffff.svg?style=flat)](https://forum.pritunl.com)
 
-[Pritunl](https://github.com/pritunl/pritunl) is a distributed enterprise
-vpn server built using the OpenVPN protocol. Documentation and more
-information can be found at the home page [pritunl.com](https://pritunl.com)
+[Pritunl](https://github.com/pritunl/pritunl) 是一个基于 OpenVPN 协议构建的分布式企业级 VPN 服务器。更多信息和文档请访问官网 [pritunl.com](https://pritunl.com)
 
 [![pritunl](www/img/logo_code.png)](https://pritunl.com)
 
-## Install From Source
+---
+
+## Docker 部署（推荐）
+
+本项目已内置 Docker 构建文件，使用 Docker Compose 即可一键启动完整的 Pritunl 服务（包含 MongoDB、Redis）。
+
+### 前置要求
+
+- Docker Engine >= 20.10
+- Docker Compose >= 2.0
+- 主机需开放端口：**443/tcp**（Web UI / API）、**1194/udp**（OpenVPN 主用）、**1194/tcp**（OpenVPN 备用）
+- 宿主机需开启 IPv4 转发：`sysctl net.ipv4.ip_forward=1`
+
+### 快速启动
 
 ```bash
-# Install MongoDB if running single host configuration
+# 1. 进入项目目录
+cd E:\Git\OpenSource\pritunl
+
+# 2. 复制环境变量模板（可选）
+copy .env.example .env
+
+# 3. 根据实际情况修改 .env 中的 MongoDB / Redis 连接地址
+
+# 4. 启动所有服务
+docker compose up -d
+
+# 5. 查看 Pritunl 日志
+docker compose logs -f pritunl
+```
+
+### 首次使用
+
+容器启动后，通过浏览器访问 `https://<服务器IP>:443` 进入 Pritunl Web 管理界面。
+
+首次登录时系统会提示设置管理员账户和 MongoDB 连接信息。
+
+### 服务说明
+
+| 服务 | 镜像 | 说明 |
+|---|---|---|
+| `pritunl` | 本地构建 | Pritunl VPN 主服务（Python 后端 + Go 前端） |
+| `mongodb` | `mongo:8.0` | 数据存储 |
+| `redis` | `redis:8-alpine` | 缓存服务（可选，提升性能） |
+
+### 数据持久化
+
+以下数据卷在容器销毁后仍然保留：
+
+- `mongodb_data` - MongoDB 数据库
+- `redis_data` - Redis 缓存
+- `pritunl_data` - Pritunl 证书、密钥、配置
+- `pritunl_logs` - 日志文件
+
+### 常用操作
+
+```bash
+# 停止服务
+docker compose down
+
+# 停止并删除所有数据（全新开始）
+docker compose down -v
+
+# 重新构建镜像后启动
+docker compose build --no-cache
+docker compose up -d
+
+# 进入容器调试
+docker compose exec pritunl bash
+```
+
+### 环境变量
+
+在 `.env` 文件中可配置以下变量：
+
+| 变量 | 默认值 | 说明 |
+|---|---|---|
+| `PRITUNL_MONGODB_URI` | `mongodb://mongodb:27017/pritunl` | MongoDB 连接地址 |
+| `PRITUNL_REDIS_URI` | `redis://redis:6379/0` | Redis 连接地址 |
+| `PRITUNL_CONF` | `/etc/pritunl.conf` | 配置文件路径 |
+
+### 注意事项
+
+- 本项目为修改版 Pritunl，已移除 Enterprise 功能，增加了中英文双语界面。
+- Docker 容器以非 root 用户 `pritunl` 运行，增强了安全性。
+- OpenVPN 需要宿主机开启 IPv4 转发，Docker Compose 已自动配置 `net.ipv4.ip_forward=1`。
+
+---
+
+## 从源码安装
+
+> 注意：以下为官方 Pritunl 的源码安装流程，仅作参考。
+
+```bash
+# 安装 MongoDB（单主机配置）
 sudo tee /etc/yum.repos.d/mongodb-org.repo << EOF
 [mongodb-org]
 name=MongoDB Repository
@@ -28,7 +117,7 @@ sudo dnf -y install mongodb-org
 sudo systemctl start mongod
 sudo systemctl enable mongod
 
-# Install OpenVPN
+# 安装 OpenVPN
 sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
@@ -40,10 +129,10 @@ EOF
 
 sudo dnf --allowerasing -y install pritunl-openvpn
 
-# [Optional] Install ndppd for IPv6 NDP proxying
+# [可选] 安装 ndppd 用于 IPv6 NDP 代理
 sudo dnf -y install pritunl-ndppd
 
-# Set current pritunl version X.XX.XXXX.XX
+# 设置当前 pritunl 版本号 X.XX.XXXX.XX
 export VERSION="X.XX.XXXX.XX"
 
 sudo dnf -y install gcc git-core wget rsync openssl-devel bzip2-devel libffi-devel sqlite-devel xz-devel zlib-devel selinux-policy selinux-policy-devel policycoreutils-python-utils python3 net-tools openssl iptables ipset ca-certificates psmisc
@@ -117,7 +206,7 @@ sudo ln -sf /usr/lib/pritunl/usr/bin/pritunl /usr/bin/pritunl
 sudo groupadd -r pritunl-web || true
 sudo useradd -r -g pritunl-web -s /sbin/nologin -c 'Pritunl web server' pritunl-web || true
 
-# [Optional] SELinux profile
+# [可选] SELinux 配置
 cd selinux9
 ln -s /usr/share/selinux/devel/Makefile
 make
@@ -155,6 +244,6 @@ sudo systemctl start pritunl
 sudo systemctl enable pritunl
 ```
 
-## License
+## 许可证
 
-Please refer to the [`LICENSE`](LICENSE) file for a copy of the license.
+请参阅 [`LICENSE`](LICENSE) 文件获取许可证副本。

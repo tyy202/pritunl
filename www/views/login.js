@@ -88,7 +88,7 @@ define([
           this.listenToOnce(modal, 'applied', function() {
             var alertView = new AlertView({
               type: 'success',
-              message: 'Successfully saved settings.',
+              message: i18n.t('msg.successSaveSettings'),
               dismissable: true
             });
             $('.alerts-container').append(alertView.render().el);
@@ -99,7 +99,7 @@ define([
         error: function() {
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load authentication data, ' +
+            message: i18n.t('msg.failedLoadState').substring(0, i18n.t('msg.failedLoadState').length - 1) + ' ' +
               'server error occurred.',
             dismissable: true
           });

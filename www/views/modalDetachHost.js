@@ -10,7 +10,7 @@ define([
   var ModalDetachHostView = ModalView.extend({
     className: 'detach-host-modal',
     template: _.template(modalDetachHostTemplate),
-    title: 'Detach Host',
+    title: i18n.t('modal.modalDetachHost.title'),
     okText: 'Detach',
     body: function() {
       return this.template(this.model.toJSON());

@@ -74,7 +74,7 @@ define([
         this.locationsView.destroy();
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted link.',
+          message: i18n.t('msg.successDeleteLink'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -91,7 +91,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully rekeyed link.',
+          message: i18n.t('msg.successRekeyLink'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -133,7 +133,7 @@ define([
           } else {
             alertView = new AlertView({
               type: 'danger',
-              message: 'Failed to ' + operation +
+              message: i18n.t('msg.failedDeleteLink').substring(0, i18n.t('msg.failedDeleteLink').length - 1) + ' ' + + operation +
               ' the link, server error occurred.',
               dismissable: true
             });

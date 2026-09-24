@@ -10,14 +10,14 @@ define([
   var ModalDeleteOrgView = ModalView.extend({
     className: 'delete-org-modal',
     template: _.template(modalDeleteOrgTemplate),
-    title: 'Delete Organization',
+    title: i18n.t('modal.modalDeleteOrg.title'),
     okText: 'Delete',
     inputMatch: true,
     initialize: function() {
       ModalDeleteOrgView.__super__.initialize.call(this);
       var alertView = new AlertView({
         type: 'danger',
-        message: 'Deleting the organization will delete all the users ' +
+        message: i18n.t('msg.deleteOrgConfirm').substring(0, i18n.t('msg.deleteOrgConfirm').length - 1) + ' ' +
           'in it. Any servers that are attached to the organization will ' +
           'be stopped.',
         animate: false

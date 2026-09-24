@@ -79,7 +79,7 @@ define([
             else {
               alertView = new AlertView({
                 type: 'danger',
-                message: 'Failed to register device',
+                message: i18n.t('msg.failedRegisterDevice'),
                 dismissable: true
               });
               $('.alerts-container').append(alertView.render().el);
@@ -97,7 +97,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully registered device.',
+          message: i18n.t('msg.successRegisterDevice'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

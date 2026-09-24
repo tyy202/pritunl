@@ -12,7 +12,7 @@ define([
   var ModalAddLocationView = ModalView.extend({
     className: 'add-location-modal',
     template: _.template(modalAddLocationTemplate),
-    title: 'Add Link Location',
+    title: i18n.t('modal.modalAddLocation.title'),
     okText: 'Add',
     initialize: function(options) {
       this.links = options.links;

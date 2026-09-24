@@ -1,52 +1,52 @@
 <div class="form-group name">
-  <label>Name</label>
-  <input type="text" class="form-control" placeholder="Enter name" data-toggle="tooltip" title="Name of host" value="<%- name %>" autofocus>
+  <label><%= i18n.t("host.name") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t("ph.enterName") %>" data-toggle="tooltip" title="Name of host" value="<%- name %>" autofocus>
 </div>
 <div class="form-group public-address">
-  <label>Public Address</label>
-  <input type="text" class="form-control" placeholder="Enter public address" data-toggle="tooltip" title="Public IP address or domain name of the host. Leave blank for automatic address. If this is set to a network load balancer domain or any domain that returns multiple IP addresses connection single sign-on, dynamic firewall and device authentication will not function. These features require that the public address is the address for this host only" value="<%- public_address %>">
+  <label><%= i18n.t("set.publicAddress") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterPublicAddress') %>" data-toggle="tooltip" title="Public IP address or domain name of the host. Leave blank for automatic address. If this is set to a network load balancer domain or any domain that returns multiple IP addresses connection single sign-on, dynamic firewall and device authentication will not function. These features require that the public address is the address for this host only" value="<%- public_address %>">
 </div>
 <div class="form-group public-address6">
-  <label>Public IPv6 Address</label>
-  <input type="text" class="form-control" placeholder="Enter public IPv6 address" data-toggle="tooltip" title="Public IPv6 address or domain name of the host. Leave blank for automatic address. If this is set to a network load balancer domain or any domain that returns multiple IP addresses connection single sign-on, dynamic firewall and device authentication will not function. These features require that the public address is the address for this host only" value="<%- public_address6 %>">
+  <label><%= i18n.t("host.localIpv6") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterPublicIpv6') %>" data-toggle="tooltip" title="Public IPv6 address or domain name of the host. Leave blank for automatic address. If this is set to a network load balancer domain or any domain that returns multiple IP addresses connection single sign-on, dynamic firewall and device authentication will not function. These features require that the public address is the address for this host only" value="<%- public_address6 %>">
 </div>
 <div class="form-group routed-subnet6">
-  <label>Routed IPv6 Subnet</label>
-  <input type="text" class="form-control" placeholder="Enter routed subnet" data-toggle="tooltip" title="IPv6 subnet that is routed to the host, must be at least /64" value="<%- routed_subnet6 %>">
+  <label><%= i18n.t("srv.routedSubnet6") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterRoutedSubnet6') %>" data-toggle="tooltip" title="IPv6 subnet that is routed to the host, must be at least /64" value="<%- routed_subnet6 %>">
 </div>
 <div class="form-group routed-subnet6-wg">
-  <label>Routed WG IPv6 Subnet</label>
-  <input type="text" class="form-control" placeholder="Enter routed subnet" data-toggle="tooltip" title="IPv6 WG subnet that is routed to the host, must be at least /64" value="<%- routed_subnet6_wg %>">
+  <label><%= i18n.t("srv.routedWgSubnet6") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterRoutedSubnet6') %>" data-toggle="tooltip" title="IPv6 WG subnet that is routed to the host, must be at least /64" value="<%- routed_subnet6_wg %>">
 </div>
 <div class="form-group toggle-form proxy-ndp-toggle">
-  <label>Proxy NDP</label>
+  <label><%= i18n.t("modal.proxyNdp") %></label>
   <div class="selector <%= proxy_ndp ? 'selected' : '' %> no-select" data-toggle="tooltip" title="Proxy IPv6 Neighbor Discovery Protocol when using a routed IPv6 subnet. Should not be needed on production networks.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="form-group local-address">
-  <label>Local Address</label>
-  <input type="text" class="form-control" placeholder="Enter local address" data-toggle="tooltip" title="Local network address for server. Leave blank for automatic address" value="<%- local_address %>">
+  <label><%= i18n.t("modal.locHostLocal") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t("ph.enterLocalAddr") %>" data-toggle="tooltip" title="Local network address for server. Leave blank for automatic address" value="<%- local_address %>">
 </div>
 <div class="form-group local-address6">
-  <label>Local IPv6 Address</label>
-  <input type="text" class="form-control" placeholder="Enter local IPv6 address" data-toggle="tooltip" title="Local IPv6 network address for server. Leave blank for automatic address" value="<%- local_address6 %>">
+  <label><%= i18n.t("host.localIpv6") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.localIpv6') %>" data-toggle="tooltip" title="Local IPv6 network address for server. Leave blank for automatic address" value="<%- local_address6 %>">
 </div>
 <div class="form-group sync-address">
-  <label>Sync Address</label>
-  <input type="text" class="form-control" placeholder="Enter sync address" data-toggle="tooltip" title="IP address or domain used by users when syncing configuration. This is needed when using a load balancer. Leave blank to use public address" value="<%- sync_address %>">
+  <label><%= i18n.t("modal.locHostSync") %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.syncAddr') %>" data-toggle="tooltip" title="IP address or domain used by users when syncing configuration. This is needed when using a load balancer. Leave blank to use public address" value="<%- sync_address %>">
 </div>
 <div class="advanced">
   <div class="form-group availability-group">
-    <label>Availability Group</label>
-    <input type="text" class="form-control" placeholder="Enter availability group" data-toggle="tooltip" title="Availability group for host. Replicated servers will only be replicated to a group of hosts in the same availability group" value="<%- availability_group %>">
+    <label><%= i18n.t("host.availabilityGroup") %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.availabilityGroup') %>" data-toggle="tooltip" title="Availability group for host. Replicated servers will only be replicated to a group of hosts in the same availability group" value="<%- availability_group %>">
   </div>
   <div class="form-group priority">
-    <label>Priority</label>
-    <input type="text" class="form-control" placeholder="Enter priority" data-toggle="tooltip" title="If priority is set Pritunl Client will attempt to connect to hosts starting with the highest priority." value="<%- priority %>">
+    <label><%= i18n.t("usr.priority") %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterPriority') %>" data-toggle="tooltip" title="If priority is set Pritunl Client will attempt to connect to hosts starting with the highest priority." value="<%- priority %>">
   </div>
   <div class="form-group link-address">
-    <label>Link Address</label>
-    <input type="text" class="form-control" placeholder="Enter link address" data-toggle="tooltip" title="IP address or domain used when linked servers connect to a linked server on this host" value="<%- link_address %>">
+    <label><%= i18n.t("link.linkAddress") %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.linkAddress') %>" data-toggle="tooltip" title="IP address or domain used when linked servers connect to a linked server on this host" value="<%- link_address %>">
   </div>
 </div>

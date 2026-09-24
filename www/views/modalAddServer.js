@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone, ServerModel, ModalServerSettingsView) {
   'use strict';
   var ModalAddServerView = ModalServerSettingsView.extend({
-    title: 'Add Server',
+    title: i18n.t('modal.modalAddServer.title'),
     okText: 'Add',
     loadingMsg: 'Adding server...',
     errorMsg: 'Failed to add server, server error occurred.',

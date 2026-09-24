@@ -1,40 +1,40 @@
 <div class="route-comment form-group">
-  <label>Comment</label>
-  <input type="text" class="form-control" placeholder="Enter route comment" data-toggle="tooltip" title="Comment for route" value="<%- comment || '' %>">
+  <label><%= i18n.t('modal.routeComment') %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterRouteComment') %>" data-toggle="tooltip" title="Comment for route" value="<%- comment || '' %>">
 </div>
 <div class="nat-route-toggle toggle-form form-group">
-  <label>NAT Route</label>
+  <label><%= i18n.t('modal.natRoute') %></label>
   <div class="selector <%= nat ? 'selected' : '' %> no-select" data-toggle="tooltip" title="NAT vpn traffic destined to this network">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="nat-interface form-group">
-  <label>NAT Interface Name</label>
+  <label><%= i18n.t('modal.natInterface') %></label>
   <input type="text" class="form-control" placeholder="Auto select" data-toggle="tooltip" title="Optional outbound interface for NAT. Leave blank to automatically detect interface" value="<%- nat_interface || '' %>">
 </div>
 <div class="nat-netmap form-group">
-  <label>NAT Network Mapping</label>
+  <label><%= i18n.t('modal.natNetmap') %></label>
   <input type="text" class="form-control" placeholder="Disabled" data-toggle="tooltip" title="Create a network mapping to remap this network into a new network with the same subnet. Clients will have access to this network through the mapped network" value="<%- nat_netmap || '' %>">
 </div>
 <div class="net-gateway-toggle toggle-form form-group">
-  <label>Block Route and Net Gateway</label>
+  <label><%= i18n.t('modal.blockRoute') %></label>
   <div class="selector <%= net_gateway ? 'selected' : '' %> no-select" data-toggle="tooltip" title="Route the network through the pre-existing default gateway. Useful for excluding an address or network from routing that is inside an already routed network. Restricted access to route is enforced on the server iptables. Will not work if 0.0.0.0/0 is routed or with the restrict routing option disabled">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="route-advertisement-toggle toggle-form form-group">
-  <label>Cloud Route Advertisement</label>
+  <label><%= i18n.t('modal.cloudAdvertise') %></label>
   <div class="selector <%= (advertise || vpc_id) ? 'selected' : '' %> no-select" data-toggle="tooltip" title="Enable cloud route advertisement. Requires cloud provider to be configured in settings">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="advanced form-group">
   <div class="route-advertisement-resource form-group">
-    <label>Cloud Route Advertisement Resource</label>
+    <label><%= i18n.t('modal.cloudAdvertiseRes') %></label>
     <input type="text" class="form-control" placeholder="Route advertisement resource" data-toggle="tooltip" title="Optional, override automatic VPC routing table detection and use comma-separated list of routing table IDs" value="<%- (advertise_resource || []).join(',') %>">
   </div>
   <div class="route-metric form-group">
-    <label>Metric</label>
-    <input type="text" class="form-control" placeholder="Enter route metric" data-toggle="tooltip" title="Optional route metric, must be greater then zero" value="<%- metric || '' %>">
+    <label><%= i18n.t('modal.routeMetric') %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterRouteMetric') %>" data-toggle="tooltip" title="Optional route metric, must be greater then zero" value="<%- metric || '' %>">
   </div>
 </div>

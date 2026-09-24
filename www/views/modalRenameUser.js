@@ -9,7 +9,7 @@ define([
   var ModalRenameUserView = ModalView.extend({
     className: 'rename-user-modal',
     template: _.template(modalRenameUserTemplate),
-    title: 'Modify User',
+    title: i18n.t('modal.modalRenameUser.title'),
     okText: 'Save',
     enterOk: false,
     hasAdvanced: true,

@@ -10,7 +10,7 @@ define([
   var ModalAddLinkView = ModalView.extend({
     className: 'add-link-modal',
     template: _.template(modalAddLinkTemplate),
-    title: 'Add Link',
+    title: i18n.t('modal.modalAddLink.title'),
     okText: 'Add',
     events: function() {
       return _.extend({

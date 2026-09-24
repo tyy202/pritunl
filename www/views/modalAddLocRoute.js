@@ -11,7 +11,7 @@ define([
   var ModalAddLocRouteView = ModalView.extend({
     className: 'add-location-route-modal',
     template: _.template(modalAddLocRouteTemplate),
-    title: 'Add Location Route',
+    title: i18n.t('modal.modalAddLocRoute.title'),
     okText: 'Add',
     initialize: function(options) {
       this.link = options.link;

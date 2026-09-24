@@ -130,13 +130,11 @@ require([
   'underscore',
   'backbone',
   'models/state',
-  'models/subscription',
-  'collections/event',
   'views/header',
   'routers/main',
+  'i18n/bootstrap',
   'initialize'
-], function($, _, Backbone, StateModel, SubscriptionModel, EventCollection,
-    HeaderView, mainRouter, initialize) {
+], function($, _, Backbone, StateModel, HeaderView, mainRouter, i18n, initialize) {
   'use strict';
 
   initialize();
@@ -523,7 +521,6 @@ require([
       window.subId = '';
       window.theme = model.get('theme');
       window.superUser = model.get('super_user');
-      window.sso = model.get('sso');
       window.csrfToken = model.get('csrf_token');
 
       if (model.get('user')) {
@@ -535,29 +532,6 @@ require([
       }
       else {
         $('body').removeClass('dark');
-      }
-
-      if (window.subActive) {
-        if (window.subPlan === 'premium') {
-          $('body').addClass('premium-' + window.subId);
-        }
-        else if (window.subPlan === 'enterprise') {
-          $('body').addClass('enterprise-' + window.subId);
-        }
-        else if (window.subPlan === 'enterprise_plus') {
-          $('body').addClass('enterprise-plus-' + window.subId);
-        }
-      }
-      else {
-        if (window.subPlan === 'premium') {
-          $('body').addClass('premium-license');
-        }
-        else if (window.subPlan === 'enterprise') {
-          $('body').addClass('enterprise-license');
-        }
-        else if (window.subPlan === 'enterprise-plus') {
-          $('body').addClass('enterprise-plus-license');
-        }
       }
 
       if (window.superUser) {

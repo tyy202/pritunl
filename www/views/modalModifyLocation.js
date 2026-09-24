@@ -10,7 +10,7 @@ define([
   var ModalModifyLocationView = ModalView.extend({
     className: 'modify-location-modal',
     template: _.template(modalModifyLocationTemplate),
-    title: 'Modify Location',
+    title: i18n.t('modal.modalModifyLocation.title'),
     okText: 'Save',
     body: function() {
       return this.template(this.model.toJSON());

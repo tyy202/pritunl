@@ -10,7 +10,7 @@ define([
   var ModalModifyLocationView = ModalView.extend({
     className: 'modify-location-host-modal',
     template: _.template(modalModifyLocHostTemplate),
-    title: 'Modify Location Host',
+    title: i18n.t('modal.modalModifyLocHost.title'),
     okText: 'Save',
     hasAdvanced: true,
     events: function() {

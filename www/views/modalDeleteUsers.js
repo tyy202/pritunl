@@ -10,7 +10,7 @@ define([
   var ModalDeleteUsersView = ModalView.extend({
     className: 'delete-users-modal',
     template: _.template(modalDeleteUsersTemplate),
-    title: 'Delete Users',
+    title: i18n.t('modal.modalDeleteUsers.title'),
     okText: 'Delete',
     initialize: function() {
       var i;
@@ -25,7 +25,7 @@ define([
       if (removingServerUsers) {
         alertView = new AlertView({
           type: 'danger',
-          message: 'Warning, deleting server users can break the servers.',
+          message: i18n.t('msg.warnDeleteUsers'),
           animate: false
         });
         this.addView(alertView);

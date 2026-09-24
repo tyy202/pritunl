@@ -10,7 +10,7 @@ define([
   var ModalServerSettingsView = ModalView.extend({
     className: 'server-settings-modal',
     template: _.template(modalServerSettingsTemplate),
-    title: 'Server Settings',
+    title: i18n.t('modal.modalServerSettings.title'),
     okText: 'Save',
     loadingMsg: 'Saving server...',
     errorMsg: 'Failed to saving server, server error occurred.',

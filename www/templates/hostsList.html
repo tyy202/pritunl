@@ -1,16 +1,16 @@
 <div class="hosts-list-header">
-  <h1 class="hosts-list-title title">Hosts</h1>
+  <h1 class="hosts-list-title title"><%= i18n.t('host.title') %></h1>
   <div class="hosts-list-buttons">
   </div>
 </div>
 <div class="alerts-container"></div>
 <div class="hosts-list-container">
 </div>
-<button type="button" class="prev-page btn btn-primary btn-sm">Previous Page</button>
-<button type="button" class="next-page btn btn-primary btn-sm">Next Page</button>
+<button type="button" class="prev-page btn btn-primary btn-sm"><%= i18n.t('common.prev') %></button>
+<button type="button" class="next-page btn btn-primary btn-sm"><%= i18n.t('common.next') %></button>
 <div class="pages no-select">
   <div class="links">
-    <a class="link first">First</a>
-    <a class="link last">Last</a>
+    <a class="link first"><%= i18n.t('common.first') %></a>
+    <a class="link last"><%= i18n.t('common.last') %></a>
   </div>
 </div>

@@ -11,7 +11,7 @@ define([
   var ModalDeleteLocationView = ModalView.extend({
     className: 'delete-location-modal',
     template: _.template(modalDeleteLocationTemplate),
-    title: 'Delete Location',
+    title: i18n.t('modal.modalDeleteLocation.title'),
     okText: 'Delete',
     inputMatch: true,
     initialize: function() {

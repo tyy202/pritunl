@@ -9,7 +9,7 @@ define([
   var ModalDeviceRegister = ModalView.extend({
     className: 'device-register-modal',
     template: _.template(modalDeviceRegister),
-    title: 'Register User Device',
+    title: i18n.t('modal.modalDeviceRegister.title'),
     okText: 'Register',
     events: function() {
       return _.extend({

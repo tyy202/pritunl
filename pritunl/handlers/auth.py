@@ -221,20 +221,6 @@ def _auth_radius(username, password, remote_addr):
     }, 202)
 
 def _auth_plugin(username, password, remote_addr):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        journal.entry(
-            journal.ADMIN_AUTH_FAILURE,
-            user_name=username,
-            remote_address=remote_addr,
-            reason=journal.ADMIN_AUTH_REASON_INVALID_USERNAME,
-            reason_long='Invalid username',
-        )
-        return utils.jsonify({
-            'error': AUTH_INVALID_USERNAME,
-            'error_msg': AUTH_INVALID_USERNAME_MSG,
-        }, 401)
-
     has_plugin, valid, org_id, groups = sso.plugin_login_authenticate(
         user_name=username,
         password=password,

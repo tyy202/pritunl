@@ -11,7 +11,7 @@ define([
   var ModalAddLocHostView = ModalView.extend({
     className: 'add-location-host-modal',
     template: _.template(modalAddLocHostTemplate),
-    title: 'Add Location Host',
+    title: i18n.t('modal.modalAddLocHost.title'),
     okText: 'Add',
     hasAdvanced: true,
     events: function() {

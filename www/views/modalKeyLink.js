@@ -9,7 +9,7 @@ define([
   var ModalKeyLinkView = ModalView.extend({
     className: 'key-link-modal',
     template: _.template(modalKeyLinkTemplate),
-    title: 'Temporary Profile Link',
+    title: i18n.t('modal.modalKeyLink.title'),
     cancelText: null,
     okText: 'Close',
     events: function() {

@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label>Are you sure you want to logout and delete the following administrators?</label>
+  <label><%= i18n.t("msg.confirmDeleteAdmins") %></label>
   <ul class="modal-user-list">
     <% _.each(admins, function(admin) { %>
       <li>

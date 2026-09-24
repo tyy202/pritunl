@@ -9,7 +9,7 @@ define([
   'use strict';
   var ModalLogsView = ModalView.extend({
     className: 'logs-modal',
-    title: 'System Logs',
+    title: i18n.t('modal.modalLogs.title'),
     okText: 'Close',
     cancelText: null,
     initialize: function() {

@@ -10,7 +10,7 @@ define([
   var ModalDeleteLinkView = ModalView.extend({
     className: 'delete-link-modal',
     template: _.template(modalDeleteLinkTemplate),
-    title: 'Delete Link',
+    title: i18n.t('modal.modalDeleteLink.title'),
     okText: 'Delete',
     inputMatch: true,
     initialize: function() {

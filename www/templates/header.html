@@ -4,20 +4,15 @@
       <a class="navbar-brand brand" href="#">pritunl</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="dashboard"><a href="#/dashboard">Dashboard</a></li>
-      <li class="admins"><a href="#/admins">Administrators</a></li>
-      <li class="users"><a href="#/users">Users</a></li>
-      <li class="servers"><a href="#/servers">Servers</a></li>
-      <li class="hosts"><a href="#/hosts">Hosts</a></li>
-      <li class="links"><a href="#/links">Links</a></li>
+      <li class="dashboard"><a href="#/dashboard"><%= i18n.t('nav.dashboard') %></a></li>
+      <li class="users"><a href="#/users"><%= i18n.t('nav.users') %></a></li>
+      <li class="servers"><a href="#/servers"><%= i18n.t('nav.servers') %></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="enterprise-upgrade"><a><span class="label label-default">Upgrade to Enterprise!</span></a></li>
-      <li class="enterprise-plus-upgrade"><a><span class="label label-success">Upgrade to Enterprise+</span></a></li>
-      <li class="enterprise-settings"><a>Subscription</a></li>
-      <li class="logs"><a>Logs</a></li>
-      <li class="change-password"><a>Settings</a></li>
-      <li class="logout"><a href="#/logout">Logout</a></li>
+      <li class="logs"><a><%= i18n.t('nav.logs') %></a></li>
+      <li class="change-password"><a><%= i18n.t('nav.settings') %></a></li>
+      <li><a class="lang-switch"><%= i18n.t('nav.lang') %></a></li>
+      <li class="logout"><a href="#/logout"><%= i18n.t('nav.logout') %></a></li>
     </ul>
   </div>
 </div>

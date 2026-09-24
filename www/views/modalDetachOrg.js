@@ -10,7 +10,7 @@ define([
   var ModalDetachOrgView = ModalView.extend({
     className: 'detach-org-modal',
     template: _.template(modalDetachOrgTemplate),
-    title: 'Detach Organization',
+    title: i18n.t('modal.modalDetachOrg.title'),
     okText: 'Detach',
     initialize: function() {
       ModalDetachOrgView.__super__.initialize.call(this);

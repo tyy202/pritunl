@@ -12,7 +12,7 @@ define([
   var ModalAttachOrgView = ModalView.extend({
     className: 'attach-org-modal',
     template: _.template(modalAttachOrgTemplate),
-    title: 'Attach Organization',
+    title: i18n.t('modal.modalAttachOrg.title'),
     okText: 'Attach',
     initialize: function(options) {
       this.orgs = options.orgs;

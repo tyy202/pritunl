@@ -12,7 +12,7 @@ define([
   var ModalSettingsView = ModalView.extend({
     className: 'settings-modal',
     template: _.template(modalSettingsTemplate),
-    title: 'Settings',
+    title: i18n.t('modal.modalSettings.title'),
     okText: 'Save',
     enterOk: false,
     hasAdvanced: true,

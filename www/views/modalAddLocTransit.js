@@ -11,7 +11,7 @@ define([
   var ModalAddLocTransitView = ModalView.extend({
     className: 'add-location-transit-modal',
     template: _.template(modalAddLocTransitTemplate),
-    title: 'Enable Peer Transit',
+    title: i18n.t('modal.modalAddLocTransit.title'),
     okText: 'Enable',
     body: function() {
       return this.template(this.model.toJSON());

@@ -56,7 +56,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully detached host.',
+          message: i18n.t('msg.successDetachHost'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

@@ -10,7 +10,7 @@ define([
   var ModalDetachLinkView = ModalView.extend({
     className: 'detach-link-modal',
     template: _.template(modalDetachLinkTemplate),
-    title: 'Detach Link',
+    title: i18n.t('modal.modalDetachLink.title'),
     okText: 'Detach',
     body: function() {
       return this.template(this.model.toJSON());

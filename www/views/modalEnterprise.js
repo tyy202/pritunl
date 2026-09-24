@@ -11,7 +11,7 @@ define([
   var ModalEnterpriseView = ModalView.extend({
     className: 'enterprise-modal',
     template: _.template(modalEnterpriseTemplate),
-    title: 'Subscription Information',
+    title: i18n.t('modal.modalEnterprise.title'),
     cancelText: null,
     okText: 'Close',
     safeClose: true,

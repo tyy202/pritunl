@@ -1,62 +1,62 @@
 <div class="form-group">
   <div class="form-group name">
-    <label>Name</label>
-    <input type="text" class="form-control" placeholder="Enter name" data-toggle="tooltip" title="Name of link" autofocus>
+    <label><%= i18n.t('srv.name') %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t("ph.enterName") %>" data-toggle="tooltip" title="Name of link" autofocus>
   </div>
   <div class="form-group link-type">
-    <label>Type</label>
+    <label><%= i18n.t('modal.linkType') %></label>
     <select class="form-control" data-toggle="tooltip" title="Type of link to add.">
       <option value="site_to_site" selected>Site-to-Site</option>
-      <option value="direct">Direct</option>
+      <option value="direct"><%= i18n.t('modal.direct') %></option>
     </select>
   </div>
   <div class="form-group protocol">
-    <label>Protocol</label>
+    <label><%= i18n.t('srv.protocol') %></label>
     <select class="form-control" data-toggle="tooltip" title="Link protocol.">
-      <option value="ipsec">IPsec</option>
-      <option value="wg" selected>WireGuard</option>
+      <option value="ipsec"><%= i18n.t('modal.ipsec') %></option>
+      <option value="wg" selected><%= i18n.t('modal.wireguard') %></option>
     </select>
   </div>
   <div class="form-group">
     <div class="form-group wg-port">
-      <label>WireGuard Port</label>
-      <input type="text" class="form-control" placeholder="Enter WireGuard port" data-toggle="tooltip" title="Port for WireGuard connections, must be unique to other links. Leave blank for random port">
+      <label><%= i18n.t('modal.wgPort') %></label>
+      <input type="text" class="form-control" placeholder="<%= i18n.t('ph.wgPort') %>" data-toggle="tooltip" title="Port for WireGuard connections, must be unique to other links. Leave blank for random port">
     </div>
   </div>
   <div class="ipv6-toggle toggle-form form-group">
-    <label>IPv6</label>
-    <div class="selector no-select" data-toggle="tooltip" title="Connect link hosts with IPv6. All link hosts must have an IPv6 address.">
+    <label><%= i18n.t("net.ipv6") %></label>
+    <div class="selector no-select" data-toggle="tooltip" title="Connect link hosts with <%= i18n.t("net.ipv6") %>. All link hosts must have an <%= i18n.t("net.ipv6") %> address.">
       <span class="selector-inner glyphicon glyphicon-ok"></span>
     </div>
   </div>
   <div class="host-check-toggle toggle-form form-group">
-    <label>Host Checking</label>
+    <label><%= i18n.t('modal.hostChecking') %></label>
     <div class="selector no-select" data-toggle="tooltip" title="Enable advanced host to host checking to support detecting more complex network failures.">
       <span class="selector-inner glyphicon glyphicon-ok"></span>
     </div>
   </div>
   <div class="form-group link-action">
-    <label>Action</label>
+    <label><%= i18n.t('modal.action') %></label>
     <select class="form-control" data-toggle="tooltip" title="Action for ipsec client to take when connection issue occurs. For most configurations restart will provide the best reliability.">
-      <option value="restart" selected>Restart</option>
-      <option value="hold">Hold</option>
+      <option value="restart" selected><%= i18n.t('modal.restart') %></option>
+      <option value="hold"><%= i18n.t('modal.hold') %></option>
     </select>
   </div>
 </div>
 <div class="form-group">
   <div class="form-group preferred-ike">
-    <label>Preferred IKE Cipher</label>
-    <input type="text" class="form-control" placeholder="Enter cipher" data-toggle="tooltip" title="Preferred IKE Cipher, refer to strongSwan IKEv2 Cipher Suites. Leave blank for default">
+    <label><%= i18n.t('modal.preferredIke') %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.cipher') %>" data-toggle="tooltip" title="Preferred IKE Cipher, refer to strongSwan IKEv2 Cipher Suites. Leave blank for default">
   </div>
 </div>
 <div class="form-group">
   <div class="form-group preferred-esp">
-    <label>Preferred ESP Cipher</label>
-    <input type="text" class="form-control" placeholder="Enter cipher" data-toggle="tooltip" title="Preferred ESP Cipher, refer to strongSwan IKEv2 Cipher Suites. Leave blank for default">
+    <label><%= i18n.t('modal.preferredEsp') %></label>
+    <input type="text" class="form-control" placeholder="<%= i18n.t('ph.cipher') %>" data-toggle="tooltip" title="Preferred ESP Cipher, refer to strongSwan IKEv2 Cipher Suites. Leave blank for default">
   </div>
 </div>
 <div class="force-preferred-toggle toggle-form form-group">
-  <label>Force Preferred Cipher</label>
+  <label><%= i18n.t('modal.forceCipher') %></label>
   <div class="selector no-select" data-toggle="tooltip" title="Force IPsec connections to use preferred cipher. Connections will not be allowed from other ciphers. Requires updated pritunl-link clients.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>

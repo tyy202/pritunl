@@ -79,7 +79,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added location route.',
+          message: i18n.t('msg.successAddLocationRoute'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -95,7 +95,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added location host.',
+          message: i18n.t('msg.successAddLocationHost'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -107,7 +107,7 @@ define([
       if (this.collection.length < 2) {
         var alertView = new AlertView({
           type: 'danger',
-          message: 'Two locations must be created before creating an peer.',
+          message: i18n.t('msg.twoLocationsNeeded'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -123,7 +123,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added location peer.',
+          message: i18n.t('msg.successAddLocationPeer'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -263,7 +263,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted link.',
+          message: i18n.t('msg.successDeleteLink'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

@@ -11,7 +11,7 @@ define([
   var ModalDeleteLocPeerView = ModalView.extend({
     className: 'delete-location-peer-modal',
     template: _.template(modalDeleteLocPeerTemplate),
-    title: 'Remove Location Peer',
+    title: i18n.t('modal.modalDeleteLocPeer.title'),
     okText: 'Remove',
     body: function() {
       return this.template(this.model.toJSON());

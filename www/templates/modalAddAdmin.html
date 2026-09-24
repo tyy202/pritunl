@@ -1,32 +1,32 @@
 <div class="form-group username">
-  <label>Username</label>
-  <input type="text" class="form-control" placeholder="Enter username" data-toggle="tooltip" title="Username for administrator" autocomplete="off" autofocus>
+  <label><%= i18n.t('login.username') %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t('ph.enterUsername') %>" data-toggle="tooltip" title="Username for administrator" autocomplete="off" autofocus>
 </div>
 <div class="form-group password">
-  <label>Password</label>
-  <input type="password" class="form-control" placeholder="Enter new password"
+  <label><%= i18n.t('login.password') %></label>
+  <input type="password" class="form-control" placeholder="<%= i18n.t('ph.enterNewPassword') %>"
     data-toggle="tooltip" title="Administrator password" autocomplete="off">
 </div>
 <div class="form-group yubikey-id">
-  <label>YubiKey ID</label>
+  <label><%= i18n.t('modal.yubikeyId') %></label>
   <input type="text" class="form-control" maxlength="12"
     placeholder="Insert YubiKey" data-toggle="tooltip"
     title="Insert and touch YubiKey to get ID. Requires Yubico API credentials in settings." autocomplete="off">
 </div>
 <div class="super-user-toggle toggle-form form-group">
-  <label>Super User</label>
+  <label><%= i18n.t('adm.superUser') %></label>
   <div class="selector no-select" data-toggle="tooltip" title="Allow administrator to modify other administrators.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="otp-auth-toggle toggle-form form-group">
-  <label>Enable Two-Step Authentication</label>
+  <label><%= i18n.t("usr.twoStep") %></label>
   <div class="selector no-select" data-toggle="tooltip" title="Enable two-step authentication with Google Authenticator.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="auth-api-toggle toggle-form form-group">
-  <label>Enable Token Authentication</label>
+  <label><%= i18n.t('modal.enableTokenAuth') %></label>
   <div class="selector no-select" data-toggle="tooltip" title="Enable authentication with an api token.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>

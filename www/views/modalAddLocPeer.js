@@ -11,7 +11,7 @@ define([
   var ModalAddLocPeerView = ModalView.extend({
     className: 'add-location-peer-modal',
     template: _.template(modalAddLocPeerTemplate),
-    title: 'Add Location Peer',
+    title: i18n.t('modal.modalAddLocPeer.title'),
     okText: 'Add',
     initialize: function(options) {
       this.link = options.link;

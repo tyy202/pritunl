@@ -1,21 +1,21 @@
 <div class="server-header">
-  <div class="server-label label label-primary toggle-hidden no-select">Server</div><h2 class="server-title title"><a class="no-select" data-toggle="tooltip" title="Click to open server settings"></a><span class="server-id title">(<%- id %>)</span></h2>
-  <button type="button" class="server-del btn btn-danger btn-sm no-select">Delete Server</button>
-  <button type="button" class="server-stop btn btn-warning btn-sm no-select">Stop Server</button>
-  <button type="button" class="server-start btn btn-success btn-sm no-select">Start Server</button>
-  <button type="button" class="server-restart btn btn-primary btn-sm no-select">Restart Server</button>
-  <button type="button" class="server-settings btn btn-primary btn-sm no-select">Settings</button>
+  <div class="server-label label label-primary toggle-hidden no-select"><%= i18n.t('srv.title') %></div><h2 class="server-title title"><a class="no-select" data-toggle="tooltip" title="Click to open server settings"></a><span class="server-id title">(<%- id %>)</span></h2>
+  <button type="button" class="server-del btn btn-danger btn-sm no-select"><%= i18n.t('srv.delete') %></button>
+  <button type="button" class="server-stop btn btn-warning btn-sm no-select"><%= i18n.t('srv.stop') %></button>
+  <button type="button" class="server-start btn btn-success btn-sm no-select"><%= i18n.t('srv.start') %></button>
+  <button type="button" class="server-restart btn btn-primary btn-sm no-select"><%= i18n.t('srv.restart') %></button>
+  <button type="button" class="server-settings btn btn-primary btn-sm no-select"><%= i18n.t('lnk.locationSettings') %></button>
   <span class="no-dh-warning label label-default">
-    Generating DH parameters, please wait...
+    <%= i18n.t('srv.dhWarning') %>
   </span>
   <span class="no-org-warning label label-default">
-    Server must have an organization attached
+    <%= i18n.t('srv.noOrgWarning') %>
   </span>
   <span class="no-host-warning label label-default">
-    Server must have a host attached
+    <%= i18n.t('srv.noHostWarning') %>
   </span>
   <span class="no-org-host-warning label label-default">
-    Server must have a host and an organization attached
+    <%= i18n.t('srv.noOrgHostWarning') %>
   </span>
 </div>
 <div class="server-info">
@@ -23,64 +23,64 @@
     <div class="status-item server-status">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-dashboard"></span>
-        <span>Status</span>
+        <span><%= i18n.t('host.status') %></span>
       </h3>
       <div class="status-text title"></div>
     </div>
     <div class="status-item server-uptime">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-time"></span>
-        <span>Uptime</span>
+        <span><%= i18n.t('host.uptime') %></span>
       </h3>
       <div class="status-text title"></div>
     </div>
     <div class="status-item server-users">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-user"></span>
-        <span>Users</span>
+        <span><%= i18n.t("srv.usersLabel") %></span>
       </h3>
       <div class="status-text title">
-        <span class="status-num"></span> users online
+        <span class="status-num"></span> <%= i18n.t("srv.usersOnline") %>
       </div>
     </div>
     <div class="status-item server-devices">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-transfer"></span>
-        <span>Devices</span>
+        <span><%= i18n.t('dev.devices') %></span>
       </h3>
       <div class="status-text title">
-        <span class="status-num"></span> devices online
+        <span class="status-num"></span> <%= i18n.t("srv.devicesOnline") %>
       </div>
     </div>
     <div class="status-item server-network">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-signal"></span>
-        <span>Network</span>
+        <span><%= i18n.t("srv.networkLabel") %></span>
       </h3>
       <div class="status-text title"></div>
     </div>
     <div class="status-item server-port">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-cloud-upload"></span>
-        <span>Port</span>
+        <span><%= i18n.t("srv.portLabel") %></span>
       </h3>
       <div class="status-text title"></div>
     </div>
     <div class="status-item server-mode last">
       <h3 class="status-title title">
         <span class="status-icon glyphicon glyphicon-cog"></span>
-        <span>Multiple Devices</span>
+        <span><%= i18n.t("srv.modeLabel") %></span>
       </h3>
       <div class="status-text title"></div>
     </div>
   </div>
   <div class="server-output">
     <h3 class="server-output-title title">
-      <button type="button" class="server-output-btn btn btn-primary btn-xs">Server Output</button>
-      <button type="button" class="server-output-link-btn btn btn-default btn-xs">Link Output</button>
-      <button type="button" class="server-graph-btn btn btn-default btn-xs">Bandwidth Graphs</button>
-      <span class="server-output-clear glyphicon glyphicon-trash" data-toggle="tooltip" title="Click to clear server output"></span>
-      <span class="server-output-link-clear glyphicon glyphicon-trash" data-toggle="tooltip" title="Click to clear server link output"></span>
+      <button type="button" class="server-output-btn btn btn-primary btn-xs"><%= i18n.t("srv.serverOutput") %></button>
+      <button type="button" class="server-output-link-btn btn btn-default btn-xs"><%= i18n.t("srv.linkOutput") %></button>
+      <button type="button" class="server-graph-btn btn btn-default btn-xs"><%= i18n.t("srv.bandwidthGraphs") %></button>
+      <span class="server-output-clear glyphicon glyphicon-trash" data-toggle="tooltip" title="<%= i18n.t("srv.outputClear") %>"></span>
+      <span class="server-output-link-clear glyphicon glyphicon-trash" data-toggle="tooltip" title="<%= i18n.t("srv.outputLinkClear") %>"></span>
       <button type="button" class="server-graph-period graph-1d btn btn-default btn-xs">365 Days</button>
       <button type="button" class="server-graph-period graph-2h btn btn-default btn-xs">30 Days</button>
       <button type="button" class="server-graph-period graph-30m btn btn-default btn-xs">7 Days</button>

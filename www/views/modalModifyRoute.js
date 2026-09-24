@@ -9,7 +9,7 @@ define([
   var ModalModifyRouteView = ModalView.extend({
     className: 'modify-route-modal',
     template: _.template(modaleModifyRouteTemplate),
-    title: 'Modify Route',
+    title: i18n.t('modal.modalModifyRoute.title'),
     okText: 'Save',
     hasAdvanced: true,
     events: function() {

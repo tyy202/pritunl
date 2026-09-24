@@ -246,7 +246,7 @@ define([
           this.listenToOnce(modal, 'applied', function() {
             var alertView = new AlertView({
               type: 'success',
-              message: 'Successfully saved server settings.',
+              message: i18n.t('msg.successSaveServerSettings'),
               dismissable: true
             });
             $('.alerts-container').append(alertView.render().el);
@@ -258,7 +258,7 @@ define([
         error: function() {
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load server information, ' +
+            message: i18n.t('msg.failedLoadServerInfo').substring(0, i18n.t('msg.failedLoadServerInfo').length - 1) + ' ' +
               'server error occurred.',
             dismissable: true
           });
@@ -282,7 +282,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted server.',
+          message: i18n.t('msg.successDeleteServer'),,
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -326,7 +326,7 @@ define([
           else {
             alertView = new AlertView({
               type: 'danger',
-              message: 'Failed to ' + operation +
+              message: i18n.t('msg.failedTransitServer').substring(0, i18n.t('msg.failedTransitServer').length - 1) + ' ' + + operation +
                 ' the server, server error occurred.',
               dismissable: true
             });

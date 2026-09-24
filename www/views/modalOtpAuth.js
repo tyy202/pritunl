@@ -10,7 +10,7 @@ define([
   var ModalOtpAuthView = ModalView.extend({
     className: 'otp-auth-modal',
     template: _.template(modalOtpAuthTemplate),
-    title: 'Two-Step Authentication Key',
+    title: i18n.t('modal.modalOtpAuth.title'),
     cancelText: null,
     okText: 'Close',
     events: function() {

@@ -12,7 +12,7 @@ define([
   var ModalAttachHostView = ModalView.extend({
     className: 'attach-host-modal',
     template: _.template(modalAttachHostTemplate),
-    title: 'Attach Host',
+    title: i18n.t('modal.modalAttachHost.title'),
     okText: 'Attach',
     initialize: function(options) {
       this.hosts = options.hosts;

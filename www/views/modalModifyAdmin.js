@@ -9,7 +9,7 @@ define([
   var ModalModifyAdminView = ModalView.extend({
     className: 'modify-admin-modal',
     template: _.template(modalModifyAdminTemplate),
-    title: 'Modify Administrator',
+    title: i18n.t('modal.modalModifyAdmin.title'),
     okText: 'Modify',
     enterOk: false,
     events: function() {

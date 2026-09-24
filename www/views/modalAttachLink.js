@@ -12,7 +12,7 @@ define([
   var ModalAttachLinkView = ModalView.extend({
     className: 'attach-link-modal',
     template: _.template(modalAttachLinkTemplate),
-    title: 'Link Servers',
+    title: i18n.t('modal.modalAttachLink.title'),
     okText: 'Link',
     events: function() {
       return _.extend({

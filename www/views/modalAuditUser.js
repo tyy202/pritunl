@@ -10,7 +10,7 @@ define([
   var ModalAuditUserView = ModalView.extend({
     className: 'audit-user-modal',
     template: _.template(modalAuditUserTemplate),
-    title: 'User Audit',
+    title: i18n.t('modal.modalAuditUser.title'),
     okText: 'Close',
     cancelText: null,
     body: function() {

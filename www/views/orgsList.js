@@ -70,7 +70,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added organization.',
+          message: i18n.t('msg.successAddOrg'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -85,7 +85,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added user.',
+          message: i18n.t('msg.successAddUser'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -130,7 +130,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted selected users.',
+          message: i18n.t('msg.successDeleteUsers'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

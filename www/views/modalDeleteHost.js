@@ -10,7 +10,7 @@ define([
   var ModalDeleteHostView = ModalView.extend({
     className: 'delete-host-modal',
     template: _.template(modalDeleteOrgTemplate),
-    title: 'Delete Host',
+    title: i18n.t('modal.modalDeleteHost.title'),
     okText: 'Delete',
     inputMatch: true,
     initialize: function() {

@@ -14,17 +14,18 @@ define([
   'views/modalAttachOrg',
   'views/modalAttachHost',
   'views/modalAttachLink',
-  'text!templates/serversList.html'
+  'text!templates/serversList.html',
+  'i18n'
 ], function($, _, Backbone, StatusModel, ServerCollection, OrgCollection,
     HostCollection, ListView, AlertView, ServersListItemView,
     ModalAddServerView, ModalAddRouteView, ModalAttachOrgView,
-    ModalAttachHostView, ModalAttachLinkView, serversListTemplate) {
+    ModalAttachHostView, ModalAttachLinkView, serversListTemplate, i18n) {
   'use strict';
   var ServersListView = ListView.extend({
     className: 'servers-list',
     listContainer: '.servers-list-container',
     template: _.template(serversListTemplate),
-    listErrorMsg: 'Failed to load servers, server error occurred.',
+    listErrorMsg: i18n.t('common.error') + ': ' + i18n.t('srv.loadFailed'),
     events: {
       'click .prev-page': 'prevPage',
       'click .next-page': 'nextPage',
@@ -75,7 +76,7 @@ define([
           this.servers.reset();
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load servers, server error occurred.',
+            message: i18n.t('msg.failedLoadServers'),
             dismissable: true
           });
           $('.alerts-container').append(alertView.render().el);
@@ -97,7 +98,7 @@ define([
           this.orgs.reset();
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load organizations, server error occurred.',
+            message: i18n.t('msg.failedLoadOrgs'),
             dismissable: true
           });
           $('.alerts-container').append(alertView.render().el);
@@ -119,7 +120,7 @@ define([
           this.links.reset();
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load hosts, server error occurred.',
+            message: i18n.t('msg.failedLoadHosts'),
             dismissable: true
           });
           $('.alerts-container').append(alertView.render().el);
@@ -161,7 +162,7 @@ define([
           this.listenToOnce(modal, 'applied', function() {
             var alertView = new AlertView({
               type: 'success',
-              message: 'Successfully added server.',
+              message: i18n.t('msg.successAddServer'),
               dismissable: true
             });
             $('.alerts-container').append(alertView.render().el);
@@ -173,7 +174,7 @@ define([
         error: function() {
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load server information, ' +
+            message: i18n.t('msg.failedLoadServerInfo').substring(0, i18n.t('msg.failedLoadServerInfo').length - 1) + ' ' +
               'server error occurred.',
             dismissable: true
           });
@@ -197,7 +198,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added route.',
+          message: i18n.t('msg.successAddRoute'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -224,7 +225,7 @@ define([
       if (!this.orgs.length) {
         var alertView = new AlertView({
           type: 'danger',
-          message: 'No organizations exist, an organization must be ' +
+          message: i18n.t('msg.noOrgsExist').substring(0, i18n.t('msg.noOrgsExist').length - 1) + ' ' +
             'created before attaching.',
           dismissable: true
         });
@@ -239,7 +240,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully attached organization.',
+          message: i18n.t('msg.successAttachOrg'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -266,7 +267,7 @@ define([
       if (!this.hosts.length) {
         var alertView = new AlertView({
           type: 'danger',
-          message: 'No hosts exist, a host must be created before attaching.',
+          message: i18n.t('msg.noHostsExist'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -280,7 +281,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully attached host.',
+          message: i18n.t('msg.successAttachHost'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -299,7 +300,7 @@ define([
       if (this.servers.length < 2) {
         var alertView = new AlertView({
           type: 'danger',
-          message: 'Two servers must be created before creating a link.',
+          message: i18n.t('msg.twoServersNeeded'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -313,7 +314,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully linked server.',
+          message: i18n.t('msg.successLinkServer'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

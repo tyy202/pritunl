@@ -13,7 +13,7 @@ define([
   var ModalAddUserBulkView = ModalView.extend({
     className: 'add-user-bulk-modal',
     template: _.template(modalAddUserBulkTemplate),
-    title: 'Bulk Add Users',
+    title: i18n.t('modal.modalAddUserBulk.title'),
     okText: 'Add',
     enterOk: false,
     safeClose: true,

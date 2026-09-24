@@ -10,7 +10,7 @@ define([
   var ModalEmailUsersView = ModalView.extend({
     className: 'email-users-modal',
     template: _.template(modalEmailUsersTemplate),
-    title: 'Email Users',
+    title: i18n.t('modal.modalEmailUsers.title'),
     okText: 'Send',
     initialize: function() {
       var i;
@@ -19,7 +19,7 @@ define([
         if (!this.collection.models[i].get('email')) {
           var alertView = new AlertView({
             type: 'warning',
-            message: 'Warning, not all of selected users have an email ' +
+            message: i18n.t('msg.warnNoEmailUsers').substring(0, i18n.t('msg.warnNoEmailUsers').length - 1) + ' ' +
               'address configured and will not receive a key email.',
             animate: false
           });

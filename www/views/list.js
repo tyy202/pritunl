@@ -2,15 +2,16 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/alert'
-], function($, _, Backbone, AlertView) {
+  'views/alert',
+  'i18n'
+], function($, _, Backbone, AlertView, i18n) {
   'use strict';
   // Max number of views to use slide animation on reset
   var MAX_SLIDE_COUNT = 5;
 
   var ListView = Backbone.View.extend({
     listContainer: null,
-    listErrorMsg: 'Failed to load list, server error occurred.',
+    listErrorMsg: i18n.t('common.error') + ': ' + i18n.t('common.loadFailed'),
     initialize: function() {
       this.listenTo(this.collection, 'reset', this._onReset);
       this.views = [];

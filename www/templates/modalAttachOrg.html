@@ -1,5 +1,5 @@
 <div class="org form-group">
-  <label>Select an organization</label>
+  <label><%= i18n.t('modal.selectOrg') %></label>
   <select class="form-control">
     <% _.each(orgs, function(org) { %>
       <option value="<%- org.id %>"><%- org.name %></option>
@@ -7,7 +7,7 @@
   </select>
 </div>
 <div class="server form-group">
-  <label>Select a server</label>
+  <label><%= i18n.t('modal.selectServer') %></label>
   <select class="form-control">
     <% _.each(servers, function(server) { %>
       <option value="<%- server.id %>" <%= (lastServer === server.id) ? 'selected' : '' %>><%- server.name %></option>

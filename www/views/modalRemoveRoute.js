@@ -10,7 +10,7 @@ define([
   var ModalRemoveRouteView = ModalView.extend({
     className: 'remove-route-modal',
     template: _.template(modalRemoveRouteTemplate),
-    title: 'Remove Route',
+    title: i18n.t('modal.modalRemoveRoute.title'),
     okText: 'Remove',
     body: function() {
       return this.template(this.model.toJSON());

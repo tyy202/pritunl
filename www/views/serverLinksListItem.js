@@ -57,7 +57,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully detached link.',
+          message: i18n.t('msg.successDetachLink'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

@@ -28,7 +28,7 @@ define([
       if (this.server.get('status') === 'online') {
         var alertView = new AlertView({
           type: 'danger',
-          message: 'Server must be offline to detach an organization.',
+          message: i18n.t('msg.serverMustOfflineDetach'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -48,7 +48,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully detached server organization.',
+          message: i18n.t('msg.successDetachOrg'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

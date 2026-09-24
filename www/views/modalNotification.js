@@ -10,7 +10,7 @@ define([
   var ModalNotificationView = ModalView.extend({
     className: 'notification-modal',
     template: _.template(modalNotificationTemplate),
-    title: 'Update Notification',
+    title: i18n.t('modal.modalNotification.title'),
     okText: 'Close',
     cancelText: null,
     body: function() {

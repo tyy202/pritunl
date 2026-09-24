@@ -1,50 +1,50 @@
 <div class="form-group name">
-  <label>Name</label>
-  <input type="text" class="form-control" placeholder="Enter name" data-toggle="tooltip" title="Name of user" value="<%- name %>" autofocus>
+  <label><%= i18n.t('srv.name') %></label>
+  <input type="text" class="form-control" placeholder="<%= i18n.t("ph.enterName") %>" data-toggle="tooltip" title="<%= i18n.t('modal.nameOfUser') %>" value="<%- name %>" autofocus>
 </div>
 <div class="form-group email">
-  <label>Email (optional)</label>
-  <input type="email" class="form-control" placeholder="Enter email address" data-toggle="tooltip" title="User email address" value="<%- email ? email : '' %>" autocomplete="off">
+  <label><%= i18n.t("usr.email") %> (optional)</label>
+  <input type="email" class="form-control" placeholder="<%= i18n.t("ph.emailAddr") %>" data-toggle="tooltip" title="User email address" value="<%- email ? email : '' %>" autocomplete="off">
 </div>
 <div class="form-group groups">
-  <label>Groups</label>
+  <label><%= i18n.t("usr.groups") %></label>
   <div class="groups-label" data-toggle="tooltip" title="Enter space seperated list of groups to associate with user. Names are case sensitive.">
-    <input type="text" placeholder="Enter groups" value="<%- groups ? groups.join(',') : '' %>">
+    <input type="text" placeholder="<%= i18n.t('ph.enterGroups') %>" value="<%- groups ? groups.join(',') : '' %>">
   </div>
 </div>
 <div class="form-group pin">
-  <label>Pin</label>
-  <input type="password" class="form-control" placeholder="Enter user pin"
+  <label><%= i18n.t("usr.pin") %></label>
+  <input type="password" class="form-control" placeholder="<%= i18n.t('ph.enterPin') %>"
     data-toggle="tooltip" title="User pin, required when user connects to vpn. When using with two-factor authentication the pin and two-factor authentication code should both be placed in the password field." autocomplete="new-password"
     value="<%- pin ? '******' : '' %>">
 </div>
 <div class="form-group yubikey-id">
-  <label>YubiKey ID</label>
+  <label><%= i18n.t('modal.yubikeyId') %></label>
   <input type="text" class="form-control" maxlength="12" placeholder="Insert YubiKey" data-toggle="tooltip" title="Insert and touch YubiKey to get ID. Requires Yubico API credentials in settings." value="<%- yubico_id %>" autocomplete="off">
 </div>
 <div class="form-group port-forwarding">
-  <label>Port Forwarding</label>
+  <label><%= i18n.t("usr.portForward") %></label>
   <input type="text" class="form-control"
-    placeholder="Enter port mappings" data-toggle="tooltip"
+    placeholder="<%= i18n.t('ph.enterPortMappings') %>" data-toggle="tooltip"
     title="Enter comma seperated list of ports to forward using format source_port:dest_port/protocol or start_port-end_port/protocol. Such as 21, 80/tcp, 80:8000/tcp, 1000-2000/udp."
     value="<%- portForwardingFormatted %>">
 </div>
 <div class="form-group network-links">
-  <label>Network Link</label>
+  <label><%= i18n.t('lnk.networkLink') %></label>
   <input type="text" class="form-control"
-    placeholder="Enter network address" data-toggle="tooltip"
+    placeholder="<%= i18n.t('ph.enterNetworkAddr') %>" data-toggle="tooltip"
     title="Enter network address with cidr subnet. This will provision access to a clients local network to the attached vpn servers and other clients. Multiple networks may be separated by a comma. Router must have a static route to VPN virtual network through client."
     value="<%- network_links ? network_links.join(', ') : '' %>">
 </div>
 <div class="client-to-client-toggle toggle-form form-group">
-  <label>Client-to-Client Only</label>
+  <label><%= i18n.t("usr.clientToClient") %></label>
   <div class="selector <%= client_to_client ? 'selected' : '' %> no-select" data-toggle="tooltip" title="Only allow this client to communicate with other clients. Access to routed networks will be blocked.">
     <span class="selector-inner glyphicon glyphicon-ok"></span>
   </div>
 </div>
 <div class="advanced">
   <div class="form-group auth-type">
-    <label>Type</label>
+    <label><%= i18n.t('modal.linkType') %></label>
     <select class="form-control" data-toggle="tooltip" title="User authentication type. This will determine how the user authenticates. This should be set automatically when the user authenticates with single sign-on. Single sign-on will override any changes to this value if the user authenticates with single sign-on from the web console.">
       <option value="local" <%= auth_type === 'local' ? 'selected' : '' %>>Local</option>
       <option value="duo" <%= auth_type === 'duo' ? 'selected' : '' %>>Duo</option>
@@ -78,28 +78,28 @@
     </select>
   </div>
   <div class="form-group mac-addresses">
-    <label>Allowed MAC Addresses</label>
+    <label><%= i18n.t("usr.allowedMac") %></label>
     <input type="text" class="form-control"
-           placeholder="Enter MAC address" data-toggle="tooltip"
+           placeholder="<%= i18n.t('ph.enterMacAddr') %>" data-toggle="tooltip"
            title="Comma separated list of MAC addresses client is allowed to connect from. The validity of the MAC address provided by the VPN client cannot be verified."
            value="<%- mac_addresses ? mac_addresses.join(', ') : '' %>">
   </div>
   <div class="form-group dns-servers">
-    <label>DNS Forwarding Server</label>
+    <label><%= i18n.t("usr.dnsForward") %></label>
     <input type="text" class="form-control"
-      placeholder="Enter dns server" data-toggle="tooltip"
+      placeholder="<%= i18n.t('ph.enterDnsServer') %>" data-toggle="tooltip"
       title="Enter dns server with port to forward sub-domain dns requests coming from this users domain. Multiple dns servers may be separated by a comma."
       value="<%- dns_servers ? dns_servers.join(', ') : '' %>">
   </div>
   <div class="form-group dns-suffix">
-    <label>DNS Forwarding Suffix</label>
+    <label><%= i18n.t("usr.dnsSuffix") %></label>
     <input type="text" class="form-control"
-      placeholder="Enter dns suffix" data-toggle="tooltip"
+      placeholder="<%= i18n.t('ph.enterDnsSuffix') %>" data-toggle="tooltip"
       title="Enter the suffix to use when forwarding dns requests. The full dns request will be the combination of the sub-domain of the users dns name suffixed by the dns suffix."
       value="<%- dns_suffix ? dns_suffix : '' %>">
   </div>
   <div class="bypass-secondary-toggle toggle-form form-group">
-    <label>Bypass Secondary Authentication</label>
+    <label><%= i18n.t("usr.bypassSecondary") %></label>
     <div class="selector <%= bypass_secondary ? 'selected' : '' %> no-select" data-toggle="tooltip" title="Bypass secondary authentication such as two-factor authentication. Use for server users that can't provide a two-factor code.">
       <span class="selector-inner glyphicon glyphicon-ok"></span>
     </div>

@@ -79,7 +79,7 @@ define([
         // TODO View is already destroyed
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted organization.',
+          message: i18n.t('msg.successDeleteOrg'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -103,7 +103,7 @@ define([
         this.$('.toggle-hidden').removeClass('label-success');
         this.$('.toggle-hidden').addClass('label-primary');
         this.$('.toggle-hidden').tooltip({
-          title: 'Showing server users'
+          title: i18n.t('modal.orgsListItem.title')
         });
         this.$('.toggle-hidden').tooltip('show');
         this.$el.addClass('show-hidden');

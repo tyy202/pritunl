@@ -9,7 +9,7 @@ define([
   var ModalLocHostUbntConfView = ModalView.extend({
     className: 'location-host-conf-modal',
     template: _.template(modalLocHostConfTemplate),
-    title: 'Location Host EdgeRouter Configuration',
+    title: i18n.t('modal.modalLocHostUbntConf.title'),
     cancelText: null,
     okText: 'Close',
     initialize: function() {

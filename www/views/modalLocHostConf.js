@@ -9,7 +9,7 @@ define([
   var ModalLocHostConfView = ModalView.extend({
     className: 'location-host-conf-modal',
     template: _.template(modalLocHostConfTemplate),
-    title: 'Location Host Static Configuration',
+    title: i18n.t('modal.modalLocHostConf.title'),
     cancelText: null,
     okText: 'Close',
     initialize: function() {

@@ -9,7 +9,7 @@ define([
   var ModalDeleteServerView = ModalView.extend({
     className: 'delete-server-modal',
     template: _.template(modalDeleteServerTemplate),
-    title: 'Delete Server',
+    title: i18n.t('modal.modalDeleteServer.title'),
     okText: 'Delete',
     inputMatch: true,
     initialize: function() {

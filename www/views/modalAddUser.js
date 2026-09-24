@@ -11,7 +11,7 @@ define([
   var ModalAddUserView = ModalView.extend({
     className: 'add-user-modal',
     template: _.template(modalAddUserTemplate),
-    title: 'Add User',
+    title: i18n.t('modal.modalAddUser.title'),
     okText: 'Add',
     enterOk: false,
     hasAdvanced: true,

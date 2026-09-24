@@ -11,7 +11,7 @@ define([
   var ModalDeleteLocTransitView = ModalView.extend({
     className: 'delete-location-transit-modal',
     template: _.template(modalDeleteLocTransitTemplate),
-    title: 'Disable Peer Transit',
+    title: i18n.t('modal.modalDeleteLocTransit.title'),
     okText: 'Disable',
     body: function() {
       return this.template(this.model.toJSON());

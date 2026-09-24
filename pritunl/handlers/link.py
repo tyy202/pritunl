@@ -25,10 +25,6 @@ from cryptography.hazmat.primitives.ciphers import (
 @app.app.route('/link', methods=['GET'])
 @auth.session_auth
 def link_get():
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         resp = utils.demo_get_cache()
         if resp:
@@ -54,10 +50,6 @@ def link_get():
 @app.app.route('/link', methods=['POST'])
 @auth.session_auth
 def link_post():
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -131,10 +123,6 @@ def link_post():
 @app.app.route('/link/<link_id>', methods=['DELETE'])
 @auth.session_auth
 def link_delete(link_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -151,10 +139,6 @@ def link_delete(link_id):
 @app.app.route('/link/<link_id>', methods=['PUT'])
 @auth.session_auth
 def link_put(link_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -205,10 +189,6 @@ def link_put(link_id):
 @app.app.route('/link/<link_id>/location', methods=['GET'])
 @auth.session_auth
 def link_location_get(link_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         resp = utils.demo_get_cache()
         if resp:
@@ -239,10 +219,6 @@ def link_location_get(link_id):
 @app.app.route('/link/<link_id>/location', methods=['POST'])
 @auth.session_auth
 def link_location_post(link_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -266,10 +242,6 @@ def link_location_post(link_id):
 @app.app.route('/link/<link_id>/location/<location_id>', methods=['PUT'])
 @auth.session_auth
 def link_location_put(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -292,10 +264,6 @@ def link_location_put(link_id, location_id):
 @app.app.route('/link/<link_id>/location/<location_id>', methods=['DELETE'])
 @auth.session_auth
 def link_location_delete(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -317,10 +285,6 @@ def link_location_delete(link_id, location_id):
     methods=['POST'])
 @auth.session_auth
 def link_location_route_post(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -352,10 +316,6 @@ def link_location_route_post(link_id, location_id):
     methods=['DELETE'])
 @auth.session_auth
 def link_location_route_delete(link_id, location_id, network):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -379,10 +339,6 @@ def link_location_route_delete(link_id, location_id, network):
     methods=['POST'])
 @auth.session_auth
 def link_location_host_post(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -433,10 +389,6 @@ def link_location_host_post(link_id, location_id):
     methods=['GET'])
 @auth.session_auth
 def link_location_host_uri_get(link_id, location_id, host_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -461,10 +413,6 @@ def link_location_host_uri_get(link_id, location_id, host_id):
     methods=['GET'])
 @auth.session_auth
 def link_location_host_conf_get(link_id, location_id, host_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -490,10 +438,6 @@ def link_location_host_conf_get(link_id, location_id, host_id):
     methods=['PUT'])
 @auth.session_auth
 def link_location_host_put(link_id, location_id, host_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -530,10 +474,6 @@ def link_location_host_put(link_id, location_id, host_id):
     methods=['DELETE'])
 @auth.session_auth
 def link_location_host_delete(link_id, location_id, host_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -559,10 +499,6 @@ def link_location_host_delete(link_id, location_id, host_id):
     methods=['POST'])
 @auth.session_auth
 def link_location_peer_post(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -588,10 +524,6 @@ def link_location_peer_post(link_id, location_id):
     methods=['DELETE'])
 @auth.session_auth
 def link_location_peer_delete(link_id, location_id, peer_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -616,10 +548,6 @@ def link_location_peer_delete(link_id, location_id, peer_id):
     methods=['POST'])
 @auth.session_auth
 def link_location_transit_post(link_id, location_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 
@@ -644,10 +572,6 @@ def link_location_transit_post(link_id, location_id):
     methods=['DELETE'])
 @auth.session_auth
 def link_location_transit_delete(link_id, location_id, transit_id):
-    if not settings.local.sub_plan or \
-            'enterprise' not in settings.local.sub_plan:
-        return flask.abort(404)
-
     if settings.app.demo_mode:
         return utils.demo_blocked()
 

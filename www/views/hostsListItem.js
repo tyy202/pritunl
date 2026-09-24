@@ -104,7 +104,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully saved host settings.',
+          message: i18n.t('msg.successSaveHost'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -150,7 +150,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted host.',
+          message: i18n.t('msg.successDeleteHost'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

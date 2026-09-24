@@ -9,7 +9,7 @@ define([
   var ModalLocHostUriView = ModalView.extend({
     className: 'location-host-uri-modal',
     template: _.template(modalLocHostUriTemplate),
-    title: 'Location Host URI',
+    title: i18n.t('modal.modalLocHostUri.title'),
     cancelText: null,
     okText: 'Close',
     events: function() {

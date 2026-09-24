@@ -12,7 +12,7 @@ define([
   var ModalAddRouteView = ModalView.extend({
     className: 'add-route-modal',
     template: _.template(modalAddRouteTemplate),
-    title: 'Add Route',
+    title: i18n.t('modal.modalAddRoute.title'),
     okText: 'Attach',
     hasAdvanced: true,
     events: function() {

@@ -1,15 +1,15 @@
 <div class="admins-list">
   <div class="admins-list-header">
-    <h1 class="admins-title title">Administrators</h1>
+    <h1 class="admins-title title"><%= i18n.t('adm.title') %></h1>
     <div class="admins-list-buttons">
-      <button type="button" class="header-button admins-del-selected btn btn-danger" disabled>Delete Selected</button>
-      <button type="button" class="header-button admins-add-admin btn btn-primary">Add Administrator</button>
+      <button type="button" class="header-button admins-del-selected btn btn-danger" disabled><%= i18n.t('common.deleteSelected') %></button>
+      <button type="button" class="header-button admins-add-admin btn btn-primary"><%= i18n.t('adm.add') %></button>
     </div>
   </div>
   <div class="alerts-container"></div>
   <div class="admins-container">
     <div class="admins-list-header">
-      <div class="label label-warning toggle-hidden no-select">Administrators</div>
+      <div class="label label-warning toggle-hidden no-select"><%= i18n.t('adm.title') %></div>
     </div>
   </div>
 </div>

@@ -11,7 +11,7 @@ define([
   var ModalDeleteUserDevice = ModalView.extend({
     className: 'delete-user-device-modal',
     template: _.template(modalDeleteUserDeviceTemplate),
-    title: 'Remove User Device',
+    title: i18n.t('modal.modalDeleteUserDevice.title'),
     okText: 'Remove',
     body: function() {
       return this.template(this.model.toJSON());

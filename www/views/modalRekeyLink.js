@@ -10,7 +10,7 @@ define([
   var ModalRekeyLinkView = ModalView.extend({
     className: 'rekey-link-modal',
     template: _.template(modalRekeyLinkTemplate),
-    title: 'Rekey Link',
+    title: i18n.t('modal.modalRekeyLink.title'),
     okText: 'Rekey',
     body: function() {
       return this.template(this.model.toJSON());

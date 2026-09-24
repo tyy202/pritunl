@@ -50,7 +50,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added administrator.',
+          message: i18n.t('msg.successAddAdmin'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -72,7 +72,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully deleted selected administrators.',
+          message: i18n.t('msg.successDeleteAdmins'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

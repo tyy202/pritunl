@@ -9,7 +9,7 @@ define([
   var ModalRenameOrgView = ModalView.extend({
     className: 'rename-org-modal',
     template: _.template(modalRenameOrgTemplate),
-    title: 'Modify Organization',
+    title: i18n.t('modal.modalRenameOrg.title'),
     okText: 'Modify',
     body: function() {
       return this.template(this.model.toJSON());

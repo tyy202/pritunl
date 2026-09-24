@@ -10,7 +10,7 @@ define([
   var ModalModifyLinkView = ModalView.extend({
     className: 'modify-link-modal',
     template: _.template(modalModifyLinkTemplate),
-    title: 'Modify Link',
+    title: i18n.t('modal.modalModifyLink.title'),
     okText: 'Save',
     events: function() {
       return _.extend({

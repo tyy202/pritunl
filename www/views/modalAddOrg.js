@@ -10,7 +10,7 @@ define([
   var ModalAddOrgView = ModalView.extend({
     className: 'add-org-modal',
     template: _.template(modalAddOrgTemplate),
-    title: 'Add Organization',
+    title: i18n.t('modal.modalAddOrg.title'),
     okText: 'Add',
     body: function() {
       return this.template();

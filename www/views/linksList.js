@@ -51,7 +51,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added link.',
+          message: i18n.t('msg.successAddLink'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);
@@ -66,7 +66,7 @@ define([
       this.listenToOnce(modal, 'applied', function() {
         var alertView = new AlertView({
           type: 'success',
-          message: 'Successfully added location.',
+          message: i18n.t('msg.successAddLocation'),
           dismissable: true
         });
         $('.alerts-container').append(alertView.render().el);

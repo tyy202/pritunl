@@ -70,7 +70,7 @@ define([
         error: function() {
           var alertView = new AlertView({
             type: 'danger',
-            message: 'Failed to load server bandwidth, server error occurred.',
+            message: i18n.t('msg.failedLoadBandwidth'),
             dismissable: true
           });
           $('.alerts-container').append(alertView.render().el);
